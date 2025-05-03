@@ -1,0 +1,41 @@
+services:
+  app:
+    container_name: app-dev
+    build:
+      context: ../..
+      dockerfile: ./dockers/dev/Dockerfile.dev
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=db
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_NAME=points-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../..:/app
+      - /app/node_modules
+    depends_on:
+      - db
+    networks:
+      - app-network
+  db:
+    image: mysql:8.0
+    container_name: mysql-dev
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: points-dev
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
+volumes:
+  db_data:
+    driver: local
