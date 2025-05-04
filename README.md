@@ -15,3 +15,6 @@ cp .env.example .env
 make dev
 ```
 
+# Swagger UI
+You can access the Swagger UI at `http://localhost:8000/api` to see the API documentation and test the endpoints.
+
