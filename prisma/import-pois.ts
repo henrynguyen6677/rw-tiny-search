@@ -1,6 +1,6 @@
+import {PrismaClient} from '@prisma/client';
 import {promises as fs} from 'fs';
 import axios from 'axios';
-import {PrismaClient} from '@prisma/client';
 
 
 const OVERPASS_API_URL = 'https://overpass-api.de/api/interpreter';
@@ -63,7 +63,7 @@ type OverpassResponse = {
   };
 }
 
-async function importPOIs(element: Element[] = []) {
+async function importPOIsToDatabase(element: Element[] = []) {
   const prisma = new PrismaClient();
   try {
     for (const poi of element) {
@@ -106,28 +106,28 @@ async function importPOIs(element: Element[] = []) {
   }
 }
 
-async function getOverpassData(query: string) {
+async function getOverpassData(query: string): Promise<Element[] | undefined> {
   try {
     const response: OverpassResponse = await axios.post(OVERPASS_API_URL, query, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
     });
-    // console.log('Response data:', response.data.elements);
-    await importPOIs(response.data.elements);
     await fs.writeFile('pois.json', JSON.stringify(response.data, null, 2));
     console.log('Save data to pois.json successfully!');
+    return response.data.elements;
   } catch (error) {
     console.error(error);
   }
 }
 
-main()
-  .catch((e) => {
-    console.error(e);
-    process.exit(1);
-  })
-
-async function main() {
-  await getOverpassData(overpassQuery);
+export async function importPOIs() {
+  console.log('Start importing POIs from Overpass API...');
+  const pois: Element[] | undefined = await getOverpassData(overpassQuery);
+  if (!pois) {
+    console.error('No POIs found');
+    return;
+  }
+  await importPOIsToDatabase(pois);
+  console.log('Done!');
 }

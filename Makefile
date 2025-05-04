@@ -6,3 +6,8 @@ dev:
 dev-install:
 	@echo "Install for container"
 	docker-compose -f dockers/dev/compose.dev.yml exec app npm install
+seed:
+	@echo "Seeding database"
+	docker-compose -f dockers/dev/compose.dev.yml up -d
+	npm run seed
+	@echo "Database seeded"
