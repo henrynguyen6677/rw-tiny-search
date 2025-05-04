@@ -2,10 +2,24 @@
   "version": 0.6,
   "generator": "Overpass API 0.7.62.5 1bd436f1",
   "osm3s": {
-    "timestamp_osm_base": "2025-05-04T21:59:26Z",
+    "timestamp_osm_base": "2025-05-04T22:57:46Z",
     "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
   },
   "elements": [
+    {
+      "type": "node",
+      "id": 444668652,
+      "lat": 21.0316531,
+      "lon": 105.8364907,
+      "tags": {
+        "amenity": "bank",
+        "brand": "Vietcombank",
+        "brand:wikidata": "Q6122995",
+        "name": "Vietcombank",
+        "note": "21-DEC-08 16:36:50",
+        "operator": "Vietcombank"
+      }
+    },
     {
       "type": "node",
       "id": 1000087449,
@@ -22,29 +36,6 @@
         "amenity": "restaurant",
         "cuisine": "asian",
         "name": "Nhà Hàng Chả Cá Văn Miếu"
-      }
-    },
-    {
-      "type": "node",
-      "id": 1388478348,
-      "lat": 21.0295866,
-      "lon": 105.8349908,
-      "tags": {
-        "addr:city": "Hà Nội",
-        "addr:country": "VN",
-        "addr:district": "Đống Đa",
-        "addr:housenumber": "19",
-        "addr:postcode": "100000",
-        "addr:street": "Phố Hàng Cháo",
-        "addr:subdistrict": "Cát Linh",
-        "check_date": "2025-03-23",
-        "description": "Đây là khách sạn nhỏ vừa mới sửa lại từ nhà nghỉ. Phòng trang thiết bị đơn giản dành cho cả hút thuốc và không hút thuốc. Cầu thang rất nhỏ & hẹp. Phòng ồn, ăn sáng lèo tèo. khách sạn nhỏ = phòng nghỉ giờ",
-        "internet_access": "wlan",
-        "internet_access:fee": "no",
-        "name": "Royal Hotel",
-        "rooms": "hơn 10 phòng",
-        "stars": "1",
-        "tourism": "hotel"
       }
     },
     {
@@ -68,6 +59,37 @@
         "phone": "+844 3737 7395",
         "toilets:wheelchair": "no",
         "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4533330489,
+      "lat": 21.0304693,
+      "lon": 105.8383455,
+      "tags": {
+        "addr:country": "VN",
+        "addr:street": "Phố Cao Bá Quát",
+        "amenity": "bar",
+        "name:en": "Bar Betta"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4659378790,
+      "lat": 21.0288555,
+      "lon": 105.836555,
+      "tags": {
+        "amenity": "parking"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4748986590,
+      "lat": 21.0305075,
+      "lon": 105.8342075,
+      "tags": {
+        "amenity": "place_of_worship",
+        "religion": "confucian"
       }
     },
     {
@@ -101,24 +123,6 @@
         "amenity": "restaurant",
         "name": "Phủi Quán",
         "source": "grab_hanoi_2018_t1"
-      }
-    },
-    {
-      "type": "node",
-      "id": 5485825282,
-      "lat": 21.0292439,
-      "lon": 105.8343303,
-      "tags": {
-        "addr:city": "Hà Nội",
-        "addr:district": "Đống Đa",
-        "addr:housenumber": "26",
-        "addr:postcode": "100000",
-        "addr:street": "Ngõ Hàng Bột",
-        "addr:subdistrict": "Cát Linh",
-        "description": "Khách sạn 3 sao tiêu chuẩn theo phong cách boutique kết hợp kiến trúc hiện đại với tinh hoa văn miếu lâu đời của Hà Nội. Khá sạch. Đội ngũ nhân viên chưa được tốt, phục vụ còn hạn chế.",
-        "name": "Khách Sạn Hanoi Emotion",
-        "source": "Hotel",
-        "tourism": "hotel"
       }
     },
     {
@@ -173,6 +177,33 @@
     },
     {
       "type": "node",
+      "id": 6689094090,
+      "lat": 21.0297279,
+      "lon": 105.8381133,
+      "tags": {
+        "addr:street": "Phố Nguyễn Thái Học",
+        "amenity": "bank",
+        "name": "Exim Bank"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6689539636,
+      "lat": 21.0303319,
+      "lon": 105.8357634,
+      "tags": {
+        "addr:street": "Phố Nguyễn Thái Học",
+        "amenity": "bank",
+        "brand": "BIDV",
+        "brand:wikidata": "Q1003180",
+        "name": "BIDV",
+        "official_name": "Ngân hàng Đầu tư và Phát triển Việt Nam",
+        "official_name:en": "Bank for Investment and Development of Vietnam",
+        "official_name:vi": "Ngân hàng Đầu tư và Phát triển Việt Nam"
+      }
+    },
+    {
+      "type": "node",
       "id": 7106090086,
       "lat": 21.0299333,
       "lon": 105.8373109,
@@ -212,6 +243,22 @@
       "tags": {
         "amenity": "cafe",
         "name": "Cà Phê Connect"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7856622555,
+      "lat": 21.0284652,
+      "lon": 105.8319705,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "19",
+        "addr:street": "Phố Cát Linh",
+        "addr:subdistrict": "Cát Linh",
+        "amenity": "post_office",
+        "name": "Bưu Cục EMS Cát Linh",
+        "operator": "Bưu điện Trung tâm 3"
       }
     },
     {
@@ -306,6 +353,26 @@
     },
     {
       "type": "node",
+      "id": 11414492644,
+      "lat": 21.0300201,
+      "lon": 105.8380674,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "52",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Nguyễn Thái Học",
+        "addr:subdistrict": "Phường Điện Biên",
+        "amenity": "bank",
+        "brand": "Agribank",
+        "brand:wikidata": "Q1924723",
+        "name": "Agribank",
+        "official_name": "Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam",
+        "official_name:en": "Vietnam Bank for Agriculture and Rural Development"
+      }
+    },
+    {
+      "type": "node",
       "id": 11430174834,
       "lat": 21.0283744,
       "lon": 105.8364294,
@@ -345,6 +412,16 @@
     },
     {
       "type": "node",
+      "id": 12091542206,
+      "lat": 21.0310711,
+      "lon": 105.8346229,
+      "tags": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy"
+      }
+    },
+    {
+      "type": "node",
       "id": 12092826928,
       "lat": 21.0319363,
       "lon": 105.8370555,
@@ -379,14 +456,14 @@
     },
     {
       "type": "node",
-      "id": 12496022959,
-      "lat": 21.0300999,
-      "lon": 105.836998,
+      "id": 12093006354,
+      "lat": 21.0303948,
+      "lon": 105.8368985,
       "tags": {
-        "addr:housenumber": "123",
-        "addr:street": "Nguyễn Thái Học",
-        "name": "Atlantis Motel & Apartment",
-        "tourism": "hotel"
+        "access": "yes",
+        "amenity": "parking",
+        "fee": "yes",
+        "parking": "surface"
       }
     },
     {
@@ -410,60 +487,6 @@
         "opening_hours": "Tu-Su 11:00-22:00",
         "phone": "0963351243",
         "website": "https://ishidaya3.vn/"
-      }
-    },
-    {
-      "type": "way",
-      "id": 185540946,
-      "center": {
-        "lat": 21.0317824,
-        "lon": 105.8395837
-      },
-      "nodes": [
-        1961611405,
-        12084630859,
-        12084476986,
-        1961611565,
-        12084476987,
-        12084664244,
-        12084554889,
-        12084554890,
-        12084554891,
-        1961611533,
-        1961611618,
-        11099792775,
-        12084554888,
-        12084554887,
-        11099792774,
-        12084630852,
-        12084630853,
-        6605457413,
-        1961611561,
-        12084637954,
-        10164900093,
-        10164900092,
-        12084664202,
-        10164900094,
-        10164900095,
-        1961611405
-      ],
-      "tags": {
-        "leisure": "park",
-        "name": "Công viên Lê-nin",
-        "name:cy": "Parc Lenin",
-        "name:de": "Lenin Park",
-        "name:en": "Lenin Park",
-        "name:fr": "Parc Lénine",
-        "name:id": "Taman Lenin",
-        "name:ko": "레닌 공원",
-        "name:ru": "Парк имени Ленина",
-        "name:vi": "Công viên Lê-nin",
-        "name:zh": "列宁公园",
-        "name:zh-Hant": "列寧公園",
-        "old_name": "Vườn hoa Chi Lăng",
-        "old_name:vi": "Vườn hoa Chi Lăng",
-        "wikidata": "Q10752053",
-        "wikipedia": "vi:Công viên Lê Nin"
       }
     },
     {
@@ -524,51 +547,6 @@
     },
     {
       "type": "way",
-      "id": 702241252,
-      "center": {
-        "lat": 21.0289084,
-        "lon": 105.8353279
-      },
-      "nodes": [
-        6594592060,
-        6594592054,
-        6594580758,
-        6594580770,
-        6594580771,
-        8755424189,
-        6594580772,
-        8755424188,
-        6594580773,
-        1000087548,
-        6594591903,
-        6594580774,
-        6594580775,
-        6594592108,
-        6594592109,
-        6594592184,
-        6594592183,
-        6594592227,
-        6594592226,
-        6594592182,
-        6594592181,
-        6594592098,
-        6594592097,
-        6594129635,
-        6594592096,
-        6594592502,
-        6594592053,
-        6594592060
-      ],
-      "tags": {
-        "leisure": "park",
-        "name": "Vườn Giám",
-        "name:cy": "Gardd Giam",
-        "name:en": "Giam Garden",
-        "name:zh": "監園"
-      }
-    },
-    {
-      "type": "way",
       "id": 702456216,
       "center": {
         "lat": 21.0281103,
@@ -593,6 +571,153 @@
         "amenity": "hospital",
         "healthcare": "hospital",
         "name": "Bệnh viện Da liễu Hà Nội"
+      }
+    },
+    {
+      "type": "way",
+      "id": 702456268,
+      "center": {
+        "lat": 21.0288989,
+        "lon": 105.8366746
+      },
+      "nodes": [
+        6596692318,
+        6596692317,
+        6596692316,
+        6596692315,
+        6596692314,
+        8747608349,
+        6596692318
+      ],
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "152",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Văn Miếu",
+        "addr:subdistrict": "Văn Miếu",
+        "alt_name": "Tiên Phúc Tự",
+        "amenity": "place_of_worship",
+        "landuse": "religious",
+        "name": "Chùa Bà Nành",
+        "name:zh": "仙福寺",
+        "religion": "buddhist"
+      }
+    },
+    {
+      "type": "way",
+      "id": 702456270,
+      "center": {
+        "lat": 21.0288611,
+        "lon": 105.8374287
+      },
+      "nodes": [
+        6596692323,
+        6596692332,
+        6596692331,
+        6596692349,
+        6596692330,
+        6596692329,
+        8755410513,
+        6596692326,
+        6596692325,
+        6596692324,
+        6596692323
+      ],
+      "tags": {
+        "amenity": "place_of_worship",
+        "name": "Chùa Ngọc Hồ",
+        "name:zh": "玉湖寺",
+        "religion": "buddhist"
+      }
+    },
+    {
+      "type": "way",
+      "id": 702456275,
+      "center": {
+        "lat": 21.0289517,
+        "lon": 105.8387247
+      },
+      "nodes": [
+        6596692354,
+        6596692362,
+        6596692361,
+        6596692360,
+        12091473417,
+        6596692358,
+        6596692357,
+        6596692356,
+        6596692355,
+        6596692354
+      ],
+      "tags": {
+        "amenity": "school",
+        "name": "Trường Tiểu học Lý Thường Kiệt",
+        "name:en": "Ly Thuong Kiet Primary School",
+        "name:id": "SD Ly Thuong Kiet",
+        "name:zh": "李常杰小学"
+      }
+    },
+    {
+      "type": "way",
+      "id": 702456278,
+      "center": {
+        "lat": 21.0288794,
+        "lon": 105.8383034
+      },
+      "nodes": [
+        6596692385,
+        12091473418,
+        6596692393,
+        6596692392,
+        6596692389,
+        12091473419,
+        6596692384,
+        6596692358,
+        12091473417,
+        6596692360,
+        6596692385
+      ],
+      "tags": {
+        "addr:city": "Ha Noi",
+        "addr:country": "VN",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "104",
+        "addr:street": "Phố Nguyễn Khuyến",
+        "addr:subdistrict": "Văn Miếu",
+        "amenity": "school",
+        "name": "Trường THCS Lý Thường Kiệt",
+        "name:en": "Ly Thuong Kiet Secondary School",
+        "name:id": "SMP Ly Thuong Kiet",
+        "name:zh": "李常杰初中",
+        "phone": "04 3747 0884"
+      }
+    },
+    {
+      "type": "way",
+      "id": 914593366,
+      "center": {
+        "lat": 21.0297538,
+        "lon": 105.8392583
+      },
+      "nodes": [
+        8496056317,
+        8496056318,
+        8496056319,
+        8496056320,
+        8496056317
+      ],
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Quận Ba Đình",
+        "addr:housenumber": "40-42",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Nguyễn Thái Học",
+        "addr:subdistrict": "Phường Điện Biên",
+        "amenity": "school",
+        "grades": "1-5",
+        "name": "Trường Tiểu học Phan Chu Trinh",
+        "name:en": "Phan Chu Trinh Primary School"
       }
     },
     {
@@ -623,6 +748,117 @@
     },
     {
       "type": "way",
+      "id": 1040487957,
+      "center": {
+        "lat": 21.0286894,
+        "lon": 105.8328489
+      },
+      "nodes": [
+        9580313778,
+        9580313785,
+        9580313784,
+        9580313779,
+        9580313782,
+        9580313781,
+        9580313780,
+        9580313783,
+        9580313778
+      ],
+      "tags": {
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "import": "grabremote",
+        "name": "Chùa An Quốc",
+        "religion": "buddhist"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1046126563,
+      "center": {
+        "lat": 21.0287119,
+        "lon": 105.8304636
+      },
+      "nodes": [
+        9620503910,
+        9620503909,
+        9620503908,
+        9620503907,
+        9620503905,
+        9620503906,
+        9620503910
+      ],
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "25A",
+        "addr:street": "Cát Linh",
+        "addr:subdistrict": "Cát Linh",
+        "amenity": "bank",
+        "brand": "VDB",
+        "building": "yes",
+        "name": "Ngân hàng phát triển Việt Nam",
+        "operator": "VDB",
+        "phone": "024 3736 5659",
+        "website": "https://vdb.gov.vn/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1217390574,
+      "center": {
+        "lat": 21.029309,
+        "lon": 105.8302211
+      },
+      "nodes": [
+        11279992879,
+        11279992880,
+        11279858664,
+        11279858663,
+        11279992879
+      ],
+      "tags": {
+        "access": "private",
+        "amenity": "parking"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1217390576,
+      "center": {
+        "lat": 21.0287143,
+        "lon": 105.8327417
+      },
+      "nodes": [
+        11279992891,
+        11279992892,
+        11279992893,
+        12175007392,
+        12175007386,
+        12175007387,
+        11279992894,
+        11279992895,
+        11279992898,
+        11279992897,
+        11279992896,
+        12175007380,
+        11279992891
+      ],
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "14",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Cát Linh",
+        "addr:subdistrict": "Cát Linh",
+        "amenity": "place_of_worship",
+        "denomination": "taoist",
+        "name": "Bích Câu Đạo Quán",
+        "religion": "taoist"
+      }
+    },
+    {
+      "type": "way",
       "id": 1230610840,
       "center": {
         "lat": 21.0305939,
@@ -640,6 +876,33 @@
         "amenity": "restaurant",
         "building": "yes",
         "name": "Lê Art"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1230887051,
+      "center": {
+        "lat": 21.0302201,
+        "lon": 105.8402027
+      },
+      "nodes": [
+        11415163426,
+        11415163427,
+        12089194929,
+        11415163405,
+        11415163404,
+        11415163428,
+        11415163429,
+        11415163430,
+        12089194921,
+        11415163439,
+        12089194928,
+        11415163444,
+        11415163426
+      ],
+      "tags": {
+        "amenity": "parking",
+        "parking": "surface"
       }
     }
   ]
