@@ -29,6 +29,7 @@ model Store {
   type      String
   latitude Float
   longitude Float
+  tags      Json
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
