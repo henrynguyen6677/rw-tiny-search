@@ -1,0 +1,646 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.5 1bd436f1",
+  "osm3s": {
+    "timestamp_osm_base": "2025-05-04T21:59:26Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 1000087449,
+      "lat": 21.0296628,
+      "lon": 105.8369362,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:country": "VN",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "9",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Văn Miếu",
+        "addr:subdistrict": "Văn Miếu",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Nhà Hàng Chả Cá Văn Miếu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1388478348,
+      "lat": 21.0295866,
+      "lon": 105.8349908,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:country": "VN",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "19",
+        "addr:postcode": "100000",
+        "addr:street": "Phố Hàng Cháo",
+        "addr:subdistrict": "Cát Linh",
+        "check_date": "2025-03-23",
+        "description": "Đây là khách sạn nhỏ vừa mới sửa lại từ nhà nghỉ. Phòng trang thiết bị đơn giản dành cho cả hút thuốc và không hút thuốc. Cầu thang rất nhỏ & hẹp. Phòng ồn, ăn sáng lèo tèo. khách sạn nhỏ = phòng nghỉ giờ",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Royal Hotel",
+        "rooms": "hơn 10 phòng",
+        "stars": "1",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3679951225,
+      "lat": 21.030058,
+      "lon": 105.8378196,
+      "tags": {
+        "addr:city": "Hanoi",
+        "addr:country": "VN",
+        "addr:housenumber": "56",
+        "addr:street": "Phố Nguyễn Thái Học",
+        "amenity": "cafe",
+        "cuisine": "german",
+        "email": "cafegoethe@gmail.com",
+        "fax": "+844 3734 2254",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Cà Phê Goethe",
+        "outdoor_seating": "yes",
+        "phone": "+844 3737 7395",
+        "toilets:wheelchair": "no",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4810696421,
+      "lat": 21.0313374,
+      "lon": 105.8321031,
+      "tags": {
+        "addr:street": "Lý Văn Phúc",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Nhà Hàng Chicken Street"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5233487022,
+      "lat": 21.0303997,
+      "lon": 105.8372464,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Cà Phê Helio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5485777635,
+      "lat": 21.029167,
+      "lon": 105.835071,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Phủi Quán",
+        "source": "grab_hanoi_2018_t1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5485825282,
+      "lat": 21.0292439,
+      "lon": 105.8343303,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "26",
+        "addr:postcode": "100000",
+        "addr:street": "Ngõ Hàng Bột",
+        "addr:subdistrict": "Cát Linh",
+        "description": "Khách sạn 3 sao tiêu chuẩn theo phong cách boutique kết hợp kiến trúc hiện đại với tinh hoa văn miếu lâu đời của Hà Nội. Khá sạch. Đội ngũ nhân viên chưa được tốt, phục vụ còn hạn chế.",
+        "name": "Khách Sạn Hanoi Emotion",
+        "source": "Hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5621040324,
+      "lat": 21.0297825,
+      "lon": 105.8369781,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "5",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Văn Miếu",
+        "addr:subdistrict": "Văn Miếu",
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "internet_access": "wlan",
+        "name": "Nhà Hàng Akaari"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6334894587,
+      "lat": 21.0299464,
+      "lon": 105.8370634,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "1",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Văn Miếu",
+        "addr:subdistrict": "Văn Miếu",
+        "amenity": "cafe",
+        "name": "Cà Phê Hanoi",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6380485085,
+      "lat": 21.0287299,
+      "lon": 105.8367104,
+      "tags": {
+        "air_conditioning": "yes",
+        "amenity": "restaurant",
+        "internet_access": "wlan",
+        "name": "Nhà Hàng Bun Bêbê",
+        "outdoor_seating": "yes",
+        "payment:cash": "only",
+        "payment:credit_cards": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7106090086,
+      "lat": 21.0299333,
+      "lon": 105.8373109,
+      "tags": {
+        "addr:housenumber": "115",
+        "addr:street": "Phố Nguyễn Thái Học",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "name": "Cà Phê Cá Chép",
+        "name:en": "Cafe & bookstore"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7176850933,
+      "lat": 21.0309401,
+      "lon": 105.8362974,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7176870555,
+      "lat": 21.0305228,
+      "lon": 105.8374965,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Watanabe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7176886994,
+      "lat": 21.0295931,
+      "lon": 105.8385729,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Cà Phê Connect"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8746891238,
+      "lat": 21.029427,
+      "lon": 105.8368236,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "17",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Văn Miếu",
+        "addr:subdistrict": "Văn Miếu",
+        "amenity": "restaurant",
+        "cuisine": "noodle",
+        "name": "Phở gà Văn Miếu 17"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8746891270,
+      "lat": 21.0291735,
+      "lon": 105.836737,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "27B",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Văn Miếu",
+        "addr:subdistrict": "Văn Miếu",
+        "amenity": "restaurant",
+        "cuisine": "hotpot;beef",
+        "name": "Nhà Hàng Kường Nga"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8746891272,
+      "lat": 21.0291144,
+      "lon": 105.8367132,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "27C",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Văn Miếu",
+        "addr:subdistrict": "Văn Miếu",
+        "amenity": "restaurant",
+        "name": "Quán Sửu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9931538552,
+      "lat": 21.0292815,
+      "lon": 105.8358184,
+      "tags": {
+        "air_conditioning": "yes",
+        "amenity": "cafe",
+        "check_date:opening_hours": "2024-05-07",
+        "name": "Thư Quán",
+        "opening_hours:signed": "no",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10718073305,
+      "lat": 21.0286277,
+      "lon": 105.8371766,
+      "tags": {
+        "amenity": "cafe",
+        "internet_access": "wlan",
+        "name": "Ardor"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11218013237,
+      "lat": 21.0287751,
+      "lon": 105.8394545,
+      "tags": {
+        "addr:housenumber": "4",
+        "addr:street": "Phố Yên Thế",
+        "amenity": "restaurant",
+        "contact:facebook": "nhahangtamvi",
+        "cuisine": "vietnamese",
+        "name": "Nhà hàng Tầm Vị",
+        "opening_hours": "Mo-Su 11:00-14:30, 17:00-21:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11430174834,
+      "lat": 21.0283744,
+      "lon": 105.8364294,
+      "tags": {
+        "addr:housenumber": "35",
+        "addr:street": "Van Mieu, Hà Nội, VN 10000",
+        "amenity": "restaurant",
+        "description": "International and Vietnamese food.\n\nKOTO restaurant is a social enterprise aiming at helping at-risk and disadvantaged youth by providing them hospitality and teaching them a job.",
+        "name": "KOTO Van Mieu restaurant",
+        "phone": "+84 24 6686 7736",
+        "website": "https://www.koto.com.au/kotovanmieu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11472888175,
+      "lat": 21.0280898,
+      "lon": 105.8363726,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name:en": "KOTO",
+        "opening_hours": "Mo-Su 10:00-14:00, 16:00-20:00",
+        "phone": "02466867736",
+        "website": "https://www.koto.com.au/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11609629180,
+      "lat": 21.0304393,
+      "lon": 105.836466,
+      "tags": {
+        "amenity": "cafe",
+        "name": "80+ coffee roastery"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12092826928,
+      "lat": 21.0319363,
+      "lon": 105.8370555,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Quận Ba Đình",
+        "addr:housenumber": "10B",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Khúc Hạo",
+        "addr:subdistrict": "Phường Điện Biên",
+        "amenity": "restaurant",
+        "name": "An Nhiên"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12092826929,
+      "lat": 21.0318993,
+      "lon": 105.8368576,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Quận Ba Đình",
+        "addr:housenumber": "10A",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Khúc Hạo",
+        "addr:subdistrict": "Phường Điện Biên",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/giangrestaurant10a/",
+        "name": "Giang Restaurant",
+        "phone": "+84 92 293 45 67"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12496022959,
+      "lat": 21.0300999,
+      "lon": 105.836998,
+      "tags": {
+        "addr:housenumber": "123",
+        "addr:street": "Nguyễn Thái Học",
+        "name": "Atlantis Motel & Apartment",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12661290607,
+      "lat": 21.0304349,
+      "lon": 105.834279,
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Quận Đống Đa",
+        "addr:housenumber": "8A",
+        "addr:postcode": "100000",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Hàng Cháo",
+        "addr:subdistrict": "Cát Linh",
+        "amenity": "restaurant",
+        "cuisine": "japanese;sushi",
+        "diet:meat": "yes",
+        "diet:seafood": "yes",
+        "name": "ISHIDAYA - The 3rd Generation",
+        "opening_hours": "Tu-Su 11:00-22:00",
+        "phone": "0963351243",
+        "website": "https://ishidaya3.vn/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 185540946,
+      "center": {
+        "lat": 21.0317824,
+        "lon": 105.8395837
+      },
+      "nodes": [
+        1961611405,
+        12084630859,
+        12084476986,
+        1961611565,
+        12084476987,
+        12084664244,
+        12084554889,
+        12084554890,
+        12084554891,
+        1961611533,
+        1961611618,
+        11099792775,
+        12084554888,
+        12084554887,
+        11099792774,
+        12084630852,
+        12084630853,
+        6605457413,
+        1961611561,
+        12084637954,
+        10164900093,
+        10164900092,
+        12084664202,
+        10164900094,
+        10164900095,
+        1961611405
+      ],
+      "tags": {
+        "leisure": "park",
+        "name": "Công viên Lê-nin",
+        "name:cy": "Parc Lenin",
+        "name:de": "Lenin Park",
+        "name:en": "Lenin Park",
+        "name:fr": "Parc Lénine",
+        "name:id": "Taman Lenin",
+        "name:ko": "레닌 공원",
+        "name:ru": "Парк имени Ленина",
+        "name:vi": "Công viên Lê-nin",
+        "name:zh": "列宁公园",
+        "name:zh-Hant": "列寧公園",
+        "old_name": "Vườn hoa Chi Lăng",
+        "old_name:vi": "Vườn hoa Chi Lăng",
+        "wikidata": "Q10752053",
+        "wikipedia": "vi:Công viên Lê Nin"
+      }
+    },
+    {
+      "type": "way",
+      "id": 217792888,
+      "center": {
+        "lat": 21.0312292,
+        "lon": 105.8351549
+      },
+      "nodes": [
+        2270982167,
+        12089211294,
+        12089211292,
+        12089211293,
+        12089211291,
+        6600039831,
+        12089211290,
+        12089211289,
+        2270982164,
+        2270982161,
+        12089211286,
+        12089211285,
+        12089211284,
+        6600039830,
+        2270982169,
+        12089211283,
+        12089211282,
+        12089211281,
+        2270982167
+      ],
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Quận Ba Đình",
+        "addr:housenumber": "12",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Chu Văn An",
+        "addr:subdistrict": "Phường Điện Biên",
+        "amenity": "hospital",
+        "contact:website": "http://bvxanhpon.vn/",
+        "designation": "Department of Health Hanoi",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Bệnh viện Đa khoa Xanh Pôn",
+        "name:en": "Saint Paul's Hospital",
+        "name:fr": "L’Hôpital à Saint Paul",
+        "name:id": "Rumah Sakit Saint Paul",
+        "name:ja": "セントポール病院",
+        "name:ms": "Rumah Sehat Saint Paul",
+        "name:ru": "больница Сен-Поль",
+        "name:tr": "Aziz Paul Hastanesi",
+        "name:zh-Hant": "聖保羅多科醫院",
+        "source": "https://commons.wikimedia.org/wiki/File:S%C6%A1_%C4%91%E1%BB%93_b%E1%BB%87nh_vi%E1%BB%87n_Xanh_P%C3%B4n,_H%C3%A0_N%E1%BB%99i_001.JPG",
+        "wikidata": "Q7402043",
+        "wikimedia_commons": "Category:Saint Paul Hospital, Hanoi",
+        "wikipedia": "vi:Bệnh viện Đa khoa Xanh Pôn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 702241252,
+      "center": {
+        "lat": 21.0289084,
+        "lon": 105.8353279
+      },
+      "nodes": [
+        6594592060,
+        6594592054,
+        6594580758,
+        6594580770,
+        6594580771,
+        8755424189,
+        6594580772,
+        8755424188,
+        6594580773,
+        1000087548,
+        6594591903,
+        6594580774,
+        6594580775,
+        6594592108,
+        6594592109,
+        6594592184,
+        6594592183,
+        6594592227,
+        6594592226,
+        6594592182,
+        6594592181,
+        6594592098,
+        6594592097,
+        6594129635,
+        6594592096,
+        6594592502,
+        6594592053,
+        6594592060
+      ],
+      "tags": {
+        "leisure": "park",
+        "name": "Vườn Giám",
+        "name:cy": "Gardd Giam",
+        "name:en": "Giam Garden",
+        "name:zh": "監園"
+      }
+    },
+    {
+      "type": "way",
+      "id": 702456216,
+      "center": {
+        "lat": 21.0281103,
+        "lon": 105.8385861
+      },
+      "nodes": [
+        6596686106,
+        6596686105,
+        6596686104,
+        6596686103,
+        6596686102,
+        6596686101,
+        6596686106
+      ],
+      "tags": {
+        "addr:city": "Ha Noi",
+        "addr:country": "VN",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "79B",
+        "addr:street": "Phố Nguyễn Khuyến",
+        "addr:subdistrict": "Văn Miếu",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Bệnh viện Da liễu Hà Nội"
+      }
+    },
+    {
+      "type": "way",
+      "id": 944825022,
+      "center": {
+        "lat": 21.0280379,
+        "lon": 105.8363381
+      },
+      "nodes": [
+        8747127398,
+        8747127399,
+        8747127400,
+        8747127401,
+        8747127398
+      ],
+      "tags": {
+        "addr:city": "Hà Nội",
+        "addr:district": "Đống Đa",
+        "addr:housenumber": "43",
+        "addr:province": "Hà Nội",
+        "addr:street": "Phố Văn Miếu",
+        "addr:subdistrict": "Văn Miếu",
+        "amenity": "cafe",
+        "building": "yes",
+        "name": "Refined"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1230610840,
+      "center": {
+        "lat": 21.0305939,
+        "lon": 105.8373179
+      },
+      "nodes": [
+        11412666294,
+        12093016461,
+        11412666295,
+        12092959457,
+        11412666297,
+        11412666294
+      ],
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Lê Art"
+      }
+    }
+  ]
+}
