@@ -12,3 +12,8 @@ seed:
 	docker-compose -f dockers/dev/compose.dev.yml up -d
 	npm run seed
 	@echo "Database seeded"
+studio:
+	@echo "Running studio"
+	docker-compose -f dockers/dev/compose.dev.yml up -d
+	npm run studio
+	@echo "Studio is running"
