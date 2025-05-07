@@ -76,12 +76,13 @@ async function importPOIsToDatabase(element: Element[] = []) {
       }
       if (!tags || !tags.name) {
         console.error(`Missing tags for POI with ID ${id}`);
+        continue;
       }
       const storeId = `${type}-${id}`;
       await prisma.store.upsert({
         where: {id: storeId},
         update: {
-          type,
+          type: tags.amenity || '',
           address: '', // TODO: Add address if available
           name: tags.name || '',
           tags: tags,
@@ -90,7 +91,7 @@ async function importPOIsToDatabase(element: Element[] = []) {
         },
         create: {
           id: storeId,
-          type,
+          type: tags.amenity || '',
           address: '', // TODO: Add address if available
           name: tags.name || '',
           tags: tags,
