@@ -1,13 +1,14 @@
 import {IsNotEmpty, IsNumber, IsOptional} from 'class-validator';
 import {Type} from 'class-transformer';
 import {ApiProperty} from '@nestjs/swagger';
+
 export class SearchNearByDto {
   @ApiProperty({
     description: 'Latitude of the location',
     type: Number,
   })
-  @IsNotEmpty()
   @Type(() => Number)
+  @IsNotEmpty()
   @IsNumber()
   lat: number;
 
@@ -17,6 +18,7 @@ export class SearchNearByDto {
   })
   @IsNotEmpty()
   @Type(() => Number)
+  @IsNumber()
   lng: number;
 
   @ApiProperty({

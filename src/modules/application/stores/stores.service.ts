@@ -1,19 +1,47 @@
 import {Injectable} from '@nestjs/common';
 import {SearchNearByDto} from './dto/search-near-by.dto';
 import {PrismaService} from '../../infra/database/prisma.service';
+import {Prisma} from '@prisma/client';
+
 @Injectable()
 export class StoresService {
-  constructor(prismaService: PrismaService) {}
-  searchNearBy(q: SearchNearByDto) {
+  constructor(private prisma: PrismaService) {}
+
+  async searchStores(lat: number, lng: number, radius: number) {
+    const safeQuery = Prisma.sql`
+    select 
+      id, name, address, type, latitude, longitude,
+      ST_Distance_Sphere(POINT(longitude, latitude), POINT(${lng}, ${lat})) as distance
+    from Store 
+    where ST_Distance_Sphere(point(${lng}, ${lat}), point(longitude, latitude)) <= ${radius}`;
+
+    const stores = await this.prisma.$queryRaw<{
+      id: number;
+      name: string;
+      address: string;
+      type: string;
+      latitude: number;
+      longitude: number;
+      distance: number;
+    }[]>(safeQuery);
+
+    return stores;
+  }
+  async searchNearBy(q: SearchNearByDto) {
+    const {lat, lng} = q;
+    const radius = (q.radius ?? 1000);
+    const stores = await this.searchStores(lat, lng, radius);
+
+    return stores.map((store) => ({
+      id: store.id,
+      name: store.name,
+      address: store.address,
+      type: store.type,
+      distance: store.distance,
+      latitude: store.latitude,
+      longitude: store.longitude,
+    }));
     // TODO: Implement the logic to search for stores near the given coordinates
-    // For mysql database
-    // 1. Connect to the database
-    // 2. Create a query to find stores within the given radius
-    // 3. Apply haversine formula to calculate distance
-    // 4. Return the results
-    // 5. Close the database connection
-    // 6. Handle errors and exceptions
-    // 7. Return the results in a structured format
     // 8. Implement pagination if necessary
     // 9. Implement caching if necessary
     // 10. Implement logging if necessary
@@ -41,6 +69,5 @@ export class StoresService {
     // 32. Implement network optimization if necessary
     // 33. Implement database optimization if necessary
     // 34. Implement application optimization if necessary
-    return `${q.lat}, ${q.lng}, ${q.radius}`;
   }
 }
