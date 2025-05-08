@@ -1,0 +1,20 @@
+export enum TYPES {
+  'restaurant' = 'restaurant',
+  'cafe' = 'cafe',
+  'hospital' = 'hospital',
+  'school' = 'school',
+  'bank' = 'bank',
+  'pharmacy' = 'pharmacy',
+  'supermarket' = 'supermarket',
+  'post_office' = 'post_office',
+  'library' = 'library',
+  'bar' = 'bar',
+  'bus_station' = 'bus_station',
+  'parking' = 'parking',
+  'university' = 'university',
+  'place_of_worship' = 'place_of_worship',
+  'fire_station' = 'fire_station',
+  'police' = 'police',
+  'theatre' = 'theatre',
+}
+
