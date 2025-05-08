@@ -1,7 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { FavoritesController } from './favorites.controller';
-import { FavoritesService } from './favorites.service';
-import { DatabaseModule } from '../../infra/database/database.module';
+import {Test, TestingModule} from '@nestjs/testing';
+import {FavoritesController} from './favorites.controller';
+import {FavoritesService} from './favorites.service';
+import {DatabaseModule} from '../../infra/database/database.module';
 
 describe('FavoritesController', () => {
   let controller: FavoritesController;
@@ -27,10 +27,10 @@ describe('FavoritesController', () => {
       updatedAt: new Date(),
     };
     jest.spyOn(controller, 'create').mockImplementation(async () => {
-      return new Promise((resolve) => resolve({ id: 1, ...createFavoriteDto }));
+      return new Promise((resolve) => resolve({id: 1, ...createFavoriteDto}));
     });
     const result = await controller.create(createFavoriteDto);
-    expect(result).toEqual({ id: 2, ...createFavoriteDto });
+    expect(result).toEqual({id: 1, ...createFavoriteDto});
   });
   it('should find a favorite by userId', async () => {
     const favorites = [
@@ -113,6 +113,6 @@ describe('FavoritesController', () => {
       return new Promise((resolve) => resolve(favorite));
     });
     const result = await controller.remove(favorite.id);
-    expect(result).toEqual({ ...favorite });
+    expect(result).toEqual({...favorite});
   });
 });
