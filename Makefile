@@ -1,4 +1,4 @@
-.PHONY: dev dev-install seed studio test
+.PHONY: dev dev-install seed studio test test-cov
 dev:
 	@echo "Running dev container"
 	docker-compose -f dockers/dev/compose.dev.yml up --build
@@ -22,7 +22,12 @@ test:
 	@echo "Running tests"
 	npm run test
 	@echo "Tests completed"
+test-cov:
+	@echo "Running tests with coverage"
+	npm run test:cov
+	@echo "Tests with coverage completed"
 migrate-dev:
 	@echo "Running migration dev"
 	npm run migrate:dev
+	docker-compose -f dockers/dev/compose.dev.yml exec app npm run migrate:dev:container
 	@echo "Migration dev completed"

@@ -12,7 +12,7 @@ export class FavoritesController {
   }
 
   @Get('find/:userId')
-  findByUserId(@Param('userId') userId: string) {
+  findByUserId(@Param('userId') userId: number) {
     return this.favoritesService.findByUserId(+userId);
   }
 

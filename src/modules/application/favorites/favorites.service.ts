@@ -42,8 +42,8 @@ export class FavoritesService {
     return favorite;
   }
 
-  findByUserId(userId: number) {
-    return this.prisma.favorite.findMany({
+  async findByUserId(userId: number) {
+    return await this.prisma.favorite.findMany({
       where: {
         userId,
       },
@@ -54,8 +54,8 @@ export class FavoritesService {
     });
   }
 
-  findOne(id: number) {
-    const favorite = this.prisma.favorite.findUnique({
+  async findOne(id: number) {
+    const favorite = await this.prisma.favorite.findUnique({
       where: {
         id,
       },
@@ -63,7 +63,7 @@ export class FavoritesService {
     if (!favorite) {
       throw new Error('Favorite not found');
     }
-    return this.prisma.favorite.findUnique({
+    return await this.prisma.favorite.findUnique({
       where: {
         id,
       },
@@ -89,8 +89,8 @@ export class FavoritesService {
     });
   }
 
-  remove(id: number) {
-    const favorite = this.prisma.favorite.findUnique({
+  async remove(id: number) {
+    const favorite = await this.prisma.favorite.findUnique({
       where: {
         id,
       },
@@ -98,7 +98,7 @@ export class FavoritesService {
     if (!favorite) {
       throw new Error('Favorite not found');
     }
-    return this.prisma.favorite.delete({
+    return await this.prisma.favorite.delete({
       where: {
         id,
       },
