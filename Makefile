@@ -1,4 +1,4 @@
-.PHONY:
+.PHONY: dev dev-install seed studio test
 dev:
 	@echo "Running dev container"
 	docker-compose -f dockers/dev/compose.dev.yml up --build
@@ -17,3 +17,7 @@ studio:
 	docker-compose -f dockers/dev/compose.dev.yml up -d
 	npm run studio
 	@echo "Studio is running"
+test:
+	@echo "Running tests"
+	npm run test
+	@echo "Tests completed"
