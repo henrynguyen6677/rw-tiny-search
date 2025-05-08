@@ -7,11 +7,13 @@ dev-install:
 	@echo "Install for container"
 	docker-compose -f dockers/dev/compose.dev.yml up -d
 	docker-compose -f dockers/dev/compose.dev.yml exec app npm install
+	@echo "Install for localhost"
+	npm install
 seed:
 	@echo "Seeding database"
 	docker-compose -f dockers/dev/compose.dev.yml up -d
-	npm run seed_pois
-	npm run seed_users
+	docker-compose -f dockers/dev/compose.dev.yml exec app npm run seed_pois
+	docker-compose -f dockers/dev/compose.dev.yml exec app npm run seed_users
 	@echo "Database seeded"
 studio:
 	@echo "Running studio"
@@ -29,5 +31,5 @@ test-cov:
 migrate-dev:
 	@echo "Running migration dev"
 	npm run migrate:dev
-	docker-compose -f dockers/dev/compose.dev.yml exec app npm run migrate:dev:container
+	docker-compose -f dockers/dev/compose.dev.yml exec app npm run prisma migrate dev
 	@echo "Migration dev completed"

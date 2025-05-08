@@ -6,6 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "prisma": "prisma",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -18,8 +19,10 @@
     "test:cov": "dotenv -e .env.dev jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "seed_pois": "node -r ts-node/register --env-file=.env.dev prisma/seed/seed.ts --seed-pois",
-    "seed_users": "node -r ts-node/register --env-file=.env.dev prisma/seed/seed.ts --seed-users",
+    "seed_pois:dev": "node -r ts-node/register --env-file=.env.dev prisma/seed/seed.ts --seed-pois",
+    "seed_users:dev": "node -r ts-node/register --env-file=.env.dev prisma/seed/seed.ts --seed-users",
+    "seed_pois": "node -r ts-node/register prisma/seed/seed.ts --seed-pois",
+    "seed_users": "node -r ts-node/register prisma/seed/seed.ts --seed-users",
     "studio": "dotenv -e .env.dev prisma studio",
     "migrate:dev": "dotenv -e .env.dev prisma migrate dev"
   },
