@@ -7,13 +7,16 @@ import {Prisma} from '@prisma/client';
 export class StoresService {
   constructor(private prisma: PrismaService) {}
 
-  async searchStores(lat: number, lng: number, radius: number) {
+  async searchStores(type: string | undefined, lat: number, lng: number, radius: number) {
+    const typeWhereClause = type ? Prisma.sql`type = ${type} and` : Prisma.sql``;
     const safeQuery = Prisma.sql`
     select 
       id, name, address, type, latitude, longitude,
       ST_Distance_Sphere(POINT(longitude, latitude), POINT(${lng}, ${lat})) as distance
     from Store 
-    where ST_Distance_Sphere(point(${lng}, ${lat}), point(longitude, latitude)) <= ${radius}`;
+    where
+      ${typeWhereClause}
+      ST_Distance_Sphere(point(${lng}, ${lat}), point(longitude, latitude)) <= ${radius}`;
 
     const stores = await this.prisma.$queryRaw<{
       id: number;
@@ -28,9 +31,9 @@ export class StoresService {
     return stores;
   }
   async searchNearBy(q: SearchNearByDto) {
-    const {lat, lng} = q;
+    const {lat, lng, type} = q;
     const radius = (q.radius ?? 1000);
-    const stores = await this.searchStores(lat, lng, radius);
+    const stores = await this.searchStores(type, lat, lng, radius);
 
     return stores.map((store) => ({
       id: store.id,
