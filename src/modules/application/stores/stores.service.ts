@@ -2,6 +2,7 @@ import {Injectable} from '@nestjs/common';
 import {SearchNearByDto} from './dto/search-near-by.dto';
 import {PrismaService} from '../../infra/database/prisma.service';
 import {Prisma} from '@prisma/client';
+import {StoreWithDistance, StoreWithDistanceResponse} from './entities/store.entity';
 
 @Injectable()
 export class StoresService {
@@ -24,19 +25,11 @@ export class StoresService {
   async searchStores(type: string | undefined, lat: number, lng: number, radius: number) {
     const safeQuery = this.getSearchStoreString(type, lat, lng, radius);
 
-    const stores = await this.prisma.$queryRaw<{
-      id: number;
-      name: string;
-      address: string;
-      type: string;
-      latitude: number;
-      longitude: number;
-      distance: number;
-    }[]>(safeQuery);
+    const stores = await this.prisma.$queryRaw<StoreWithDistance[]>(safeQuery);
 
     return stores;
   }
-  async searchNearBy(q: SearchNearByDto) {
+  async searchNearBy(q: SearchNearByDto): Promise<StoreWithDistanceResponse[]> {
     const {lat, lng, type} = q;
     const radius = (q.radius ?? 1000);
     const stores = await this.searchStores(type, lat, lng, radius);
@@ -47,8 +40,8 @@ export class StoresService {
       address: store.address,
       type: store.type,
       distance: store.distance,
-      latitude: store.latitude,
-      longitude: store.longitude,
+      latitude: store.lat,
+      longitude: store.lng,
     }));
     // TODO: Implement the logic to search for stores near the given coordinates
     // 8. Implement pagination if necessary
