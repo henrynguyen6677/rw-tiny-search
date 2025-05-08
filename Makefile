@@ -10,7 +10,8 @@ dev-install:
 seed:
 	@echo "Seeding database"
 	docker-compose -f dockers/dev/compose.dev.yml up -d
-	npm run seed
+	npm run seed_pois
+	npm run seed_users
 	@echo "Database seeded"
 studio:
 	@echo "Running studio"

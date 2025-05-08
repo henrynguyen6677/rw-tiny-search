@@ -1,0 +1,32 @@
+[
+  {
+    "id": "c9cf7bd0-e3e4-4b0d-acdf-f285f9a61e20",
+    "email": "jessica.jones@example.com",
+    "name": "Jessica Jones",
+    "password": "Jessica123"
+  },
+  {
+    "id": "a9b5bc22-da7c-4d91-803a-fd58ea42d2b9",
+    "email": "ashley.johnson@example.com",
+    "name": "Ashley Johnson",
+    "password": "Ashley123"
+  },
+  {
+    "id": "6a5d6ffb-a89a-49dd-b441-aa5996918b4f",
+    "email": "ashley.rodriguez@example.com",
+    "name": "Ashley Rodriguez",
+    "password": "Ashley123"
+  },
+  {
+    "id": "3c165937-103b-4d82-81b8-d74cc1ef4e0f",
+    "email": "emily.johnson@example.com",
+    "name": "Emily Johnson",
+    "password": "Emily123"
+  },
+  {
+    "id": "be88d8bc-b269-46a1-9d8d-590526bcb1ff",
+    "email": "william.brown@example.com",
+    "name": "William Brown",
+    "password": "William123"
+  }
+]

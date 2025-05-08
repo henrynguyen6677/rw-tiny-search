@@ -40,7 +40,6 @@ const overpassQuery = `
     (${queryConditions});
     out center;
   `;
-console.log('Overpass Query:\n', overpassQuery);
 
 type Element = {
   id: number;
@@ -65,6 +64,7 @@ type OverpassResponse = {
 
 async function importPOIsToDatabase(element: Element[] = []) {
   const prisma = new PrismaClient();
+  console.log('Overpass Query:\n', overpassQuery);
   try {
     for (const poi of element) {
       const {id, type, tags, center} = poi;
