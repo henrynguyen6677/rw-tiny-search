@@ -7,6 +7,7 @@ export class SearchNearByDto {
   @ApiProperty({
     description: 'Latitude of the location',
     type: Number,
+    default: 21
   })
   @Type(() => Number)
   @IsNotEmpty()
@@ -16,6 +17,7 @@ export class SearchNearByDto {
   @ApiProperty({
     description: 'Longitude of the location',
     type: Number,
+    default: 105
   })
   @IsNotEmpty()
   @Type(() => Number)
@@ -26,6 +28,7 @@ export class SearchNearByDto {
     description: 'Radius in meters',
     type: Number,
     required: false,
+    default: 100000,
   })
   @IsOptional()
   @IsNumber()
