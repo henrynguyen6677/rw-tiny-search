@@ -2,6 +2,8 @@ import {Test, TestingModule} from '@nestjs/testing';
 import {StoresController} from './stores.controller';
 import {StoresService} from './stores.service';
 import {DatabaseModule} from '../../infra/database/database.module';
+import {SearchNearByDto} from './dto/search-near-by.dto';
+import {TYPES} from '../../../lib/constants/types.constant';
 
 describe('StoresController', () => {
   let controller: StoresController;
@@ -16,7 +18,15 @@ describe('StoresController', () => {
     controller = module.get<StoresController>(StoresController);
   });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
+  it('should return a list of stores', async () => {
+    const mockQuery: SearchNearByDto = {
+      lat: 0,
+      lng: 0,
+      radius: 64 * 1000 * 1000,
+    };
+    const result = await controller.searchNearBy(mockQuery);
+    expect(result).toBeDefined();
+    expect(Array.isArray(result)).toBe(true);
   });
+
 });
