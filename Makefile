@@ -21,3 +21,7 @@ test:
 	@echo "Running tests"
 	npm run test
 	@echo "Tests completed"
+migrate-dev:
+	@echo "Running migration dev"
+	npm run migrate:dev
+	@echo "Migration dev completed"
