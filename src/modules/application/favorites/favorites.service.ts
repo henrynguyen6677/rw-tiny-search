@@ -1,6 +1,5 @@
 import {Injectable} from '@nestjs/common';
 import {CreateFavoriteDto} from './dto/create-favorite.dto';
-import {UpdateFavoriteDto} from './dto/update-favorite.dto';
 import {PrismaService} from '../../infra/database/prisma.service';
 
 @Injectable()
@@ -43,19 +42,66 @@ export class FavoritesService {
     return favorite;
   }
 
-  findAll() {
-    return `This action returns all favorites`;
+  findByUserId(userId: number) {
+    return this.prisma.favorite.findMany({
+      where: {
+        userId,
+      },
+      include: {
+        user: true,
+        store: true,
+      }
+    });
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} favorite`;
-  }
-
-  update(id: number, updateFavoriteDto: UpdateFavoriteDto) {
-    return `This action updates a #${id} favorite`;
+    const favorite = this.prisma.favorite.findUnique({
+      where: {
+        id,
+      },
+    });
+    if (!favorite) {
+      throw new Error('Favorite not found');
+    }
+    return this.prisma.favorite.findUnique({
+      where: {
+        id,
+      },
+      select: {
+        id: true,
+        createdAt: true,
+        updatedAt: true,
+        // Include the user and store details
+        user: {
+          select: {
+            id: true,
+            name: true,
+            email: true,
+          },
+        },
+        store: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+      },
+    });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} favorite`;
+    const favorite = this.prisma.favorite.findUnique({
+      where: {
+        id,
+      },
+    });
+    if (!favorite) {
+      throw new Error('Favorite not found');
+    }
+    return this.prisma.favorite.delete({
+      where: {
+        id,
+      },
+    });
   }
 }
