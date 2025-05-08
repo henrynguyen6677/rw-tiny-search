@@ -1,4 +1,4 @@
-import {IsNotEmpty, IsNumber, IsOptional} from 'class-validator';
+import {IsNotEmpty, IsNumber, IsString, IsOptional} from 'class-validator';
 import {Type} from 'class-transformer';
 import {ApiProperty} from '@nestjs/swagger';
 import {TYPES} from '../../../../lib/constants/types.constant';
@@ -31,6 +31,14 @@ export class SearchNearByDto {
   @IsNumber()
   @Type(() => Number)
   radius?: number;
+
+  @ApiProperty({
+    description: 'Name of stores',
+    required: false,
+  })
+  @IsOptional()
+  @IsString()
+  name?: string;
 
   @ApiProperty({
     description: 'Type of store',

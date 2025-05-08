@@ -8,8 +8,13 @@ import {StoreWithDistance, StoreWithDistanceResponse} from './entities/store.ent
 export class StoresService {
   constructor(private prisma: PrismaService) {}
 
-  getSearchStoreString(type: string | undefined, lat: number, lng: number, radius: number) {
+  getSearchStoreString(lat: number, lng: number, radius: number, options: {
+    type?: string;
+    name?: string;
+  }) {
+    const {type, name} = options;
     const typeWhereClause = type ? Prisma.sql`type = ${type} and` : Prisma.sql``;
+    const nameWhereClause = name ? Prisma.sql` MATCH(name) AGAINST(${name} IN NATURAL LANGUAGE MODE) and` : Prisma.sql``;
     const safeQuery = Prisma.sql`
     select 
       id, name, address, type, latitude, longitude,
@@ -17,22 +22,30 @@ export class StoresService {
     from Store 
     where
       ${typeWhereClause}
+      ${nameWhereClause}
       ST_Distance_Sphere(point(${lng}, ${lat}), point(longitude, latitude)) <= ${radius}`;
 
     return safeQuery;
   }
 
-  async searchStores(type: string | undefined, lat: number, lng: number, radius: number) {
-    const safeQuery = this.getSearchStoreString(type, lat, lng, radius);
+  async searchStores(lat: number, lng: number, radius: number, options: {
+    type?: string;
+    name?: string;
+  }) {
+    const safeQuery = this.getSearchStoreString(lat, lng, radius, options);
 
     const stores = await this.prisma.$queryRaw<StoreWithDistance[]>(safeQuery);
 
     return stores;
   }
   async searchNearBy(q: SearchNearByDto): Promise<StoreWithDistanceResponse[]> {
-    const {lat, lng, type} = q;
+    const {lat, lng, type, name} = q;
     const radius = (q.radius ?? 1000);
-    const stores = await this.searchStores(type, lat, lng, radius);
+    const options = {
+      type,
+      name,
+    };
+    const stores = await this.searchStores(lat, lng, radius, options);
 
     return stores.map((store) => ({
       id: store.id,
