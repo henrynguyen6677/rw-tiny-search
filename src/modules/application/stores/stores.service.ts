@@ -7,7 +7,7 @@ import {Prisma} from '@prisma/client';
 export class StoresService {
   constructor(private prisma: PrismaService) {}
 
-  async searchStores(type: string | undefined, lat: number, lng: number, radius: number) {
+  getSearchStoreString(type: string | undefined, lat: number, lng: number, radius: number) {
     const typeWhereClause = type ? Prisma.sql`type = ${type} and` : Prisma.sql``;
     const safeQuery = Prisma.sql`
     select 
@@ -17,6 +17,12 @@ export class StoresService {
     where
       ${typeWhereClause}
       ST_Distance_Sphere(point(${lng}, ${lat}), point(longitude, latitude)) <= ${radius}`;
+
+    return safeQuery;
+  }
+
+  async searchStores(type: string | undefined, lat: number, lng: number, radius: number) {
+    const safeQuery = this.getSearchStoreString(type, lat, lng, radius);
 
     const stores = await this.prisma.$queryRaw<{
       id: number;
