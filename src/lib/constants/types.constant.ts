@@ -17,4 +17,3 @@ export enum TYPES {
   'police' = 'police',
   'theatre' = 'theatre',
 }
-

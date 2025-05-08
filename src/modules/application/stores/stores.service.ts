@@ -1,20 +1,32 @@
-import {Injectable} from '@nestjs/common';
-import {SearchNearByDto} from './dto/search-near-by.dto';
-import {PrismaService} from '../../infra/database/prisma.service';
-import {Prisma} from '@prisma/client';
-import {StoreWithDistance, StoreWithDistanceResponse} from './entities/store.entity';
+import { Injectable } from '@nestjs/common';
+import { SearchNearByDto } from './dto/search-near-by.dto';
+import { PrismaService } from '../../infra/database/prisma.service';
+import { Prisma } from '@prisma/client';
+import {
+  StoreWithDistance,
+  StoreWithDistanceResponse,
+} from './entities/store.entity';
 
 @Injectable()
 export class StoresService {
   constructor(private prisma: PrismaService) {}
 
-  getSearchStoreString(lat: number, lng: number, radius: number, options: {
-    type?: string;
-    name?: string;
-  }) {
-    const {type, name} = options;
-    const typeWhereClause = type ? Prisma.sql`type = ${type} and` : Prisma.sql``;
-    const nameWhereClause = name ? Prisma.sql` MATCH(name) AGAINST(${name} IN NATURAL LANGUAGE MODE) and` : Prisma.sql``;
+  getSearchStoreString(
+    lat: number,
+    lng: number,
+    radius: number,
+    options: {
+      type?: string;
+      name?: string;
+    },
+  ) {
+    const { type, name } = options;
+    const typeWhereClause = type
+      ? Prisma.sql`type = ${type} and`
+      : Prisma.sql``;
+    const nameWhereClause = name
+      ? Prisma.sql` MATCH(name) AGAINST(${name} IN NATURAL LANGUAGE MODE) and`
+      : Prisma.sql``;
     const safeQuery = Prisma.sql`
     select 
       id, name, address, type, latitude, longitude,
@@ -28,10 +40,15 @@ export class StoresService {
     return safeQuery;
   }
 
-  async searchStores(lat: number, lng: number, radius: number, options: {
-    type?: string;
-    name?: string;
-  }) {
+  async searchStores(
+    lat: number,
+    lng: number,
+    radius: number,
+    options: {
+      type?: string;
+      name?: string;
+    },
+  ) {
     const safeQuery = this.getSearchStoreString(lat, lng, radius, options);
 
     const stores = await this.prisma.$queryRaw<StoreWithDistance[]>(safeQuery);
@@ -39,8 +56,8 @@ export class StoresService {
     return stores;
   }
   async searchNearBy(q: SearchNearByDto): Promise<StoreWithDistanceResponse[]> {
-    const {lat, lng, type, name} = q;
-    const radius = (q.radius ?? 1000);
+    const { lat, lng, type, name } = q;
+    const radius = q.radius ?? 1000;
     const options = {
       type,
       name,

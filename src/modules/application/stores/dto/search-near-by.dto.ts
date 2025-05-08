@@ -1,13 +1,13 @@
-import {IsNotEmpty, IsNumber, IsString, IsOptional} from 'class-validator';
-import {Type} from 'class-transformer';
-import {ApiProperty} from '@nestjs/swagger';
-import {TYPES} from '../../../../lib/constants/types.constant';
+import { IsNotEmpty, IsNumber, IsString, IsOptional } from 'class-validator';
+import { Type } from 'class-transformer';
+import { ApiProperty } from '@nestjs/swagger';
+import { TYPES } from '../../../../lib/constants/types.constant';
 
 export class SearchNearByDto {
   @ApiProperty({
     description: 'Latitude of the location',
     type: Number,
-    default: 21
+    default: 21,
   })
   @Type(() => Number)
   @IsNotEmpty()
@@ -17,7 +17,7 @@ export class SearchNearByDto {
   @ApiProperty({
     description: 'Longitude of the location',
     type: Number,
-    default: 105
+    default: 105,
   })
   @IsNotEmpty()
   @Type(() => Number)

@@ -1,6 +1,6 @@
-import {Controller, Get, Query} from '@nestjs/common';
-import {StoresService} from './stores.service';
-import {SearchNearByDto} from './dto/search-near-by.dto';
+import { Controller, Get, Query } from '@nestjs/common';
+import { StoresService } from './stores.service';
+import { SearchNearByDto } from './dto/search-near-by.dto';
 
 @Controller('stores')
 export class StoresController {

@@ -1,9 +1,8 @@
-import {Test, TestingModule} from '@nestjs/testing';
-import {StoresController} from './stores.controller';
-import {StoresService} from './stores.service';
-import {DatabaseModule} from '../../infra/database/database.module';
-import {SearchNearByDto} from './dto/search-near-by.dto';
-import {TYPES} from '../../../lib/constants/types.constant';
+import { Test, TestingModule } from '@nestjs/testing';
+import { StoresController } from './stores.controller';
+import { StoresService } from './stores.service';
+import { DatabaseModule } from '../../infra/database/database.module';
+import { SearchNearByDto } from './dto/search-near-by.dto';
 
 describe('StoresController', () => {
   let controller: StoresController;
@@ -28,5 +27,4 @@ describe('StoresController', () => {
     expect(result).toBeDefined();
     expect(Array.isArray(result)).toBe(true);
   });
-
 });

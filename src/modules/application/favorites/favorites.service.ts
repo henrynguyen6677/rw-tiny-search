@@ -1,6 +1,6 @@
-import {Injectable} from '@nestjs/common';
-import {CreateFavoriteDto} from './dto/create-favorite.dto';
-import {PrismaService} from '../../infra/database/prisma.service';
+import { Injectable } from '@nestjs/common';
+import { CreateFavoriteDto } from './dto/create-favorite.dto';
+import { PrismaService } from '../../infra/database/prisma.service';
 
 @Injectable()
 export class FavoritesService {
@@ -50,7 +50,7 @@ export class FavoritesService {
       include: {
         user: true,
         store: true,
-      }
+      },
     });
   }
 

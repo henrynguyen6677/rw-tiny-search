@@ -1,14 +1,15 @@
-import {NestFactory} from '@nestjs/core';
-import {AppModule} from './modules/app.module';
-import {ValidationPipe} from '@nestjs/common';
-import {SwaggerModule, DocumentBuilder} from '@nestjs/swagger';
-
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './modules/app.module';
+import { ValidationPipe } from '@nestjs/common';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.useGlobalPipes(new ValidationPipe({
-    transform: true,
-  }));
+  app.useGlobalPipes(
+    new ValidationPipe({
+      transform: true,
+    }),
+  );
 
   const config = new DocumentBuilder()
     .setTitle('Tiny search engine')
@@ -21,4 +22,4 @@ async function bootstrap() {
 
   await app.listen(process.env.PORT ?? 3000);
 }
-bootstrap();
+bootstrap().then().catch(console.error);

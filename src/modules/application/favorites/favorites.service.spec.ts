@@ -1,6 +1,6 @@
-import {Test, TestingModule} from '@nestjs/testing';
-import {FavoritesService} from './favorites.service';
-import {DatabaseModule} from '../../infra/database/database.module';
+import { Test, TestingModule } from '@nestjs/testing';
+import { FavoritesService } from './favorites.service';
+import { DatabaseModule } from '../../infra/database/database.module';
 
 describe('FavoritesService', () => {
   let service: FavoritesService;

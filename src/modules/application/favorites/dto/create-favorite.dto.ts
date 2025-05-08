@@ -1,9 +1,8 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {IsNumber, IsString} from 'class-validator';
-import {Type} from 'class-transformer';
+import { ApiProperty } from '@nestjs/swagger';
+import { IsNumber, IsString } from 'class-validator';
+import { Type } from 'class-transformer';
 
 export class CreateFavoriteDto {
-
   @ApiProperty({
     description: 'User ID',
     default: 1,

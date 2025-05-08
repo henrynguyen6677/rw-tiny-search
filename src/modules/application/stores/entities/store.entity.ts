@@ -1,4 +1,4 @@
-import {TYPES} from '../../../../lib/constants/types.constant';
+import { TYPES } from '../../../../lib/constants/types.constant';
 
 export type Store = {
   id: string;
@@ -7,7 +7,7 @@ export type Store = {
   lat: number;
   lng: number;
   address: string;
-}
+};
 
 export type StoreWithDistance = {
   id: string;
@@ -17,6 +17,9 @@ export type StoreWithDistance = {
   lng: number;
   address: string;
   distance: number;
-}
+};
 
-export type StoreWithDistanceResponse = Pick<StoreWithDistance, 'id' | 'name' | 'type' | 'address' | 'distance'> & {latitude: number; longitude: number}
+export type StoreWithDistanceResponse = Pick<
+  StoreWithDistance,
+  'id' | 'name' | 'type' | 'address' | 'distance'
+> & { latitude: number; longitude: number };

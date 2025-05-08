@@ -1,7 +1,7 @@
-import {Module} from '@nestjs/common';
-import {FavoritesService} from './favorites.service';
-import {FavoritesController} from './favorites.controller';
-import {DatabaseModule} from '../../infra/database/database.module'; // Adjust the import path as necessary
+import { Module } from '@nestjs/common';
+import { FavoritesService } from './favorites.service';
+import { FavoritesController } from './favorites.controller';
+import { DatabaseModule } from '../../infra/database/database.module'; // Adjust the import path as necessary
 
 @Module({
   imports: [
