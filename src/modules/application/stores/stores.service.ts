@@ -1,11 +1,12 @@
-import { Injectable } from '@nestjs/common';
-import { SearchNearByDto } from './dto/search-near-by.dto';
-import { PrismaService } from '../../infra/database/prisma.service';
-import { Prisma } from '@prisma/client';
+import {Injectable} from '@nestjs/common';
+import {SearchNearByDto} from './dto/search-near-by.dto';
+import {PrismaService} from '../../infra/database/prisma.service';
+import {Prisma} from '@prisma/client';
 import {
   StoreWithDistance,
   StoreWithDistanceResponse,
 } from './entities/store.entity';
+import {PaginatedResponse} from './entities/paginated-response.entity';
 
 @Injectable()
 export class StoresService {
@@ -18,15 +19,19 @@ export class StoresService {
     options: {
       type?: string;
       name?: string;
+      skip?: number;
+      take?: number;
     },
   ) {
-    const { type, name } = options;
+    const {type, name, skip, take} = options;
     const typeWhereClause = type
       ? Prisma.sql`type = ${type} and`
       : Prisma.sql``;
     const nameWhereClause = name
       ? Prisma.sql` MATCH(name) AGAINST(${name} IN NATURAL LANGUAGE MODE) and`
       : Prisma.sql``;
+    const limitClause = take ? Prisma.sql`LIMIT ${take}` : Prisma.sql``;
+    const offsetClause = skip ? Prisma.sql`OFFSET ${skip}` : Prisma.sql``;
     const safeQuery = Prisma.sql`
     select 
       id, name, address, type, latitude, longitude,
@@ -35,7 +40,11 @@ export class StoresService {
     where
       ${typeWhereClause}
       ${nameWhereClause}
-      ST_Distance_Sphere(point(${lng}, ${lat}), point(longitude, latitude)) <= ${radius}`;
+      ST_Distance_Sphere(point(${lng}, ${lat}), point(longitude, latitude)) <= ${radius}
+    order by distance asc
+    ${limitClause}
+    ${offsetClause}
+      `;
 
     return safeQuery;
   }
@@ -47,6 +56,8 @@ export class StoresService {
     options: {
       type?: string;
       name?: string;
+      skip?: number;
+      take?: number;
     },
   ) {
     const safeQuery = this.getSearchStoreString(lat, lng, radius, options);
@@ -55,51 +66,31 @@ export class StoresService {
 
     return stores;
   }
-  async searchNearBy(q: SearchNearByDto): Promise<StoreWithDistanceResponse[]> {
-    const { lat, lng, type, name } = q;
-    const radius = q.radius ?? 1000;
-    const options = {
-      type,
-      name,
-    };
-    const stores = await this.searchStores(lat, lng, radius, options);
+  async searchNearBy(q: SearchNearByDto): Promise<PaginatedResponse<StoreWithDistanceResponse>> {
+    const {page = 1, limit = 10} = q;
+    const radius = q.radius || 100000;
+    const stores = await this.searchStores(q.lat, q.lng, radius, {
+      type: q.type,
+      name: q.name,
+      skip: (page - 1) * limit,
+      take: limit,
+    });
 
-    return stores.map((store) => ({
-      id: store.id,
-      name: store.name,
-      address: store.address,
-      type: store.type,
-      distance: store.distance,
-      latitude: store.lat,
-      longitude: store.lng,
-    }));
-    // TODO: Implement the logic to search for stores near the given coordinates
-    // 8. Implement pagination if necessary
-    // 9. Implement caching if necessary
-    // 10. Implement logging if necessary
-    // 11. Implement security measures if necessary
-    // 12. Implement validation if necessary
-    // 13. Implement testing if necessary
-    // 14. Implement documentation if necessary
-    // 15. Implement monitoring if necessary
-    // 16. Implement alerting if necessary
-    // 17. Implement backup and recovery if necessary
-    // 18. Implement scaling if necessary
-    // 19. Implement load balancing if necessary
-    // 20. Implement failover if necessary
-    // 21. Implement disaster recovery if necessary
-    // 22. Implement high availability if necessary
-    // 23. Implement redundancy if necessary
-    // 24. Implement fault tolerance if necessary
-    // 25. Implement performance optimization if necessary
-    // 26. Implement security optimization if necessary
-    // 27. Implement cost optimization if necessary
-    // 28. Implement resource optimization if necessary
-    // 29. Implement time optimization if necessary
-    // 30. Implement space optimization if necessary
-    // 31. Implement energy optimization if necessary
-    // 32. Implement network optimization if necessary
-    // 33. Implement database optimization if necessary
-    // 34. Implement application optimization if necessary
+    return {
+      data: stores.map((store) => ({
+        id: store.id,
+        name: store.name,
+        type: store.type,
+        address: store.address,
+        distance: store.distance,
+        latitude: store.lat,
+        longitude: store.lng,
+      })),
+      meta: {
+        page,
+        limit,
+        total: stores.length,
+      },
+    };
   }
 }

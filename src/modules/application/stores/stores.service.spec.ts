@@ -1,9 +1,11 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { StoresService } from './stores.service';
-import { DatabaseModule } from '../../infra/database/database.module';
-import { SearchNearByDto } from './dto/search-near-by.dto';
-import { TYPES } from '../../../lib/constants/types.constant';
-import { StoreWithDistanceResponse } from './entities/store.entity';
+import {Test, TestingModule} from '@nestjs/testing';
+import {StoresService} from './stores.service';
+import {DatabaseModule} from '../../infra/database/database.module';
+import {SearchNearByDto} from './dto/search-near-by.dto';
+import {TYPES} from '../../../lib/constants/types.constant';
+import {StoreWithDistanceResponse} from './entities/store.entity';
+import {PaginatedResponse} from './entities/paginated-response.entity';
+
 describe('StoresService', () => {
   let service: StoresService;
 
@@ -26,12 +28,12 @@ describe('StoresService', () => {
       radius: 64 * 1000 * 1000,
       type: TYPES.cafe,
     };
-    const result: StoreWithDistanceResponse[] =
+    const result: PaginatedResponse<StoreWithDistanceResponse> =
       await service.searchNearBy(mockQuery);
     expect(result).toBeDefined();
-    expect(result).toBeInstanceOf(Array);
-    expect(result.length).toBeGreaterThan(0);
-    result.forEach((store) => {
+    expect(result).toBeInstanceOf(Object);
+    expect(result.data.length).toBeGreaterThan(0);
+    result.data.forEach((store) => {
       expect(store).toHaveProperty('id');
       expect(store).toHaveProperty('name');
       expect(store).toHaveProperty('address');

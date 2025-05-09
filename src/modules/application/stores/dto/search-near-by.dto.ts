@@ -1,7 +1,7 @@
-import { IsNotEmpty, IsNumber, IsString, IsOptional } from 'class-validator';
-import { Type } from 'class-transformer';
-import { ApiProperty } from '@nestjs/swagger';
-import { TYPES } from '../../../../lib/constants/types.constant';
+import {IsNotEmpty, IsNumber, IsString, IsOptional} from 'class-validator';
+import {Type} from 'class-transformer';
+import {ApiProperty} from '@nestjs/swagger';
+import {TYPES} from '../../../../lib/constants/types.constant';
 
 export class SearchNearByDto {
   @ApiProperty({
@@ -50,4 +50,24 @@ export class SearchNearByDto {
   })
   @IsOptional()
   type?: string;
+
+  @ApiProperty({
+    description: 'Page number',
+    required: false,
+    default: 1,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  page?: number;
+
+  @ApiProperty({
+    description: 'Limit number',
+    required: false,
+    default: 10,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  limit?: number;
 }
