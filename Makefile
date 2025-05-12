@@ -15,6 +15,14 @@ seed:
 	docker-compose -f dockers/dev/compose.dev.yml exec app npm run seed_pois
 	docker-compose -f dockers/dev/compose.dev.yml exec app npm run seed_users
 	@echo "Database seeded"
+seed_pois:
+	@echo "Seeding POIs"
+	docker-compose -f dockers/dev/compose.dev.yml up -d
+	docker-compose -f dockers/dev/compose.dev.yml exec app npm run seed_pois
+fast_seed_pois:
+	@echo "Fast seeding POIs"
+	docker-compose -f dockers/dev/compose.dev.yml up -d
+	docker-compose -f dockers/dev/compose.dev.yml exec app npm run fast_seed_pois
 studio:
 	@echo "Running studio"
 	docker-compose -f dockers/dev/compose.dev.yml up -d

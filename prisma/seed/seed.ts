@@ -1,4 +1,5 @@
 import {importPOIs} from './import-pois';
+import {fastImportPOIs} from './fast-import-pois';
 import {fakeUsers} from './fake-users';
 main()
   .catch((e) => {
@@ -7,19 +8,24 @@ main()
   });
 
 async function main(): Promise<void> {
-  const isSeedUsesr = process.argv.includes('--seed-users');
+  const isSeedUsers = process.argv.includes('--seed-users');
   const isSeedPOIs = process.argv.includes('--seed-pois');
-  if (!isSeedUsesr && !isSeedPOIs) {
-    console.log('Please specify --seed-users or --seed-pois');
+  const isFastSeedPOIs = process.argv.includes('--fast-seed-pois');
+  if (!isSeedUsers && !isSeedPOIs && !isFastSeedPOIs) {
+    console.log('Please specify --seed-users or --seed-pois or --fast-seed-pois');
     return
   }
   if (isSeedPOIs) {
     console.log('Seeding POIs...');
     await importPOIs();
   }
-  if (isSeedUsesr) {
+  if (isSeedUsers) {
     console.log('Seeding users...');
     await fakeUsers();
+  }
+  if (isFastSeedPOIs) {
+    console.log('Seeding POIs fast...');
+    await fastImportPOIs();
   }
   console.log('Seeding done!');
 }
