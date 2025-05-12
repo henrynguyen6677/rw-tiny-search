@@ -26,6 +26,7 @@ make seed
 ```bash
 make dev
 ```
+![make_dev.png](docs/images/make_dev.png)
 
 7. Run the tests
 ```bash
