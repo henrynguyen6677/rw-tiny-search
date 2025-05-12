@@ -34,6 +34,10 @@ make test
 ```
 ![test.png](docs/images/test.png)
 
+Video:
+[![asciicast](https://asciinema.org/a/3U2iOHvgKySVVb0lyPBVhTwIO.svg)](https://asciinema.org/a/3U2iOHvgKySVVb0lyPBVhTwIO)
+
+
 # Swagger UI
 You can access the Swagger UI at `http://localhost:3000/api` to see the API documentation and test the endpoints.
 ![img.png](docs/images/api.png)
