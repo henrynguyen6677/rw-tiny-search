@@ -31,6 +31,7 @@ make dev
 ```bash
 make test
 ```
+![test.png](docs/images/test.png)
 
 # Swagger UI
 You can access the Swagger UI at `http://localhost:3000/api` to see the API documentation and test the endpoints.
