@@ -1,4 +1,4 @@
-import { TYPES } from '../../../../lib/constants/types.constant';
+import {TYPES} from '../../../../lib/constants/types.constant';
 
 export type Store = {
   id: string;
@@ -22,4 +22,5 @@ export type StoreWithDistance = {
 export type StoreWithDistanceResponse = Pick<
   StoreWithDistance,
   'id' | 'name' | 'type' | 'address' | 'distance'
-> & { latitude: number; longitude: number };
+> & {latitude: number; longitude: number};
+

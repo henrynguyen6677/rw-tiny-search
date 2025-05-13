@@ -3,6 +3,8 @@ import {Type} from 'class-transformer';
 import {ApiProperty} from '@nestjs/swagger';
 import {TYPES} from '../../../../lib/constants/types.constant';
 
+
+
 export class SearchNearByDto {
   @ApiProperty({
     description: 'Latitude of the location',

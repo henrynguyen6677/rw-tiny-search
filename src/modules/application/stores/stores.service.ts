@@ -5,8 +5,8 @@ import {Prisma} from '@prisma/client';
 import {
   StoreWithDistance,
   StoreWithDistanceResponse,
-} from './entities/store.entity';
-import {PaginatedResponse} from './entities/paginated-response.entity';
+} from './interface/store';
+import {PaginatedResponse} from './interface/paginated-response';
 
 @Injectable()
 export class StoresService {
