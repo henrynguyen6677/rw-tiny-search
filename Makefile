@@ -1,19 +1,29 @@
 .PHONY: dev dev-install seed studio test test-cov
+lazy-dev:
+	@echo "Install for localhost"
+	npm install
+	make lazy-seed
+	make fast-dev
 fast-dev:
 	@echo "Running db container"
 	docker-compose -f dockers/dev/compose.dev.yml up db -d
 	@echo "Start app in host"
 	npm run start:dev
-dev:
-	@echo "Running dev container"
-	docker-compose -f dockers/dev/compose.dev.yml up --build
-	@echo "Dev container is running"
+lazy-seed:
+	@echo "Running db container"
+	docker-compose -f dockers/dev/compose.dev.yml up db -d
+	npm run seed_pois:dev
+	npm run seed_users:dev
 dev-install:
 	@echo "Install for container"
 	docker-compose -f dockers/dev/compose.dev.yml up -d
 	docker-compose -f dockers/dev/compose.dev.yml exec app npm install
 	@echo "Install for localhost"
 	npm install
+dev:
+	@echo "Running dev container"
+	docker-compose -f dockers/dev/compose.dev.yml up --build
+	@echo "Dev container is running"
 seed:
 	@echo "Seeding database"
 	docker-compose -f dockers/dev/compose.dev.yml up -d
