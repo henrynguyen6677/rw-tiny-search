@@ -1,4 +1,9 @@
 .PHONY: dev dev-install seed studio test test-cov
+fast-dev:
+	@echo "Running db container"
+	docker-compose -f dockers/dev/compose.dev.yml up db -d
+	@echo "Start app in host"
+	npm run start:dev
 dev:
 	@echo "Running dev container"
 	docker-compose -f dockers/dev/compose.dev.yml up --build
