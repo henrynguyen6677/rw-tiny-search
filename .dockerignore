@@ -1,0 +1,10 @@
+node_modules
+build
+coverage
+*.log
+.git
+Dockerfile
+.dockerignore
+dockers
+docs
+test
