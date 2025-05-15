@@ -10,25 +10,13 @@ git clone https://github.com/henrynguyen6677/rw-tiny-search.git
 cd rw-tiny-search
 cp .env.example .env.dev
 ```
-3. Install dependencies
-```bash
-make dev-install
+3. Run dev
 ```
-4. Set up the database for development
-```bash
-make migrate-dev
-```
-5. Seed the database
-```bash
-make seed
-```
-6.Run the app
-```bash
-make dev
+make lazy-dev
 ```
 ![make_dev.png](docs/images/make_dev.png)
 
-7. Run the tests
+4. Run the tests
 ```bash
 make test
 ```
