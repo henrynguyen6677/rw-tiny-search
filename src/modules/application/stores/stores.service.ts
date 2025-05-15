@@ -11,7 +11,7 @@ import {PaginatedResponse} from './interface/paginated-response';
 @Injectable()
 export class StoresService {
   constructor(private prisma: PrismaService) {}
-
+   
   getSearchStoreString(
     lat: number,
     lng: number,

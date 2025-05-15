@@ -3,8 +3,13 @@ import { StoresModule } from './application/stores/stores.module';
 import { FavoritesModule } from './application/favorites/favorites.module';
 
 import { DatabaseModule } from './infra/database/database.module';
+import { HealthModule } from './infra/health/health.module';
+
 const applicationModules = [StoresModule, FavoritesModule];
-const infraStructureModules = [DatabaseModule];
+const infraStructureModules = [HealthModule, DatabaseModule];
+
+console.log('cwee');
+
 @Module({
   imports: [...applicationModules, ...infraStructureModules],
   controllers: [],
