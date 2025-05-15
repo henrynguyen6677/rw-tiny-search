@@ -8,8 +8,6 @@ import { HealthModule } from './infra/health/health.module';
 const applicationModules = [StoresModule, FavoritesModule];
 const infraStructureModules = [HealthModule, DatabaseModule];
 
-console.log('cwee');
-
 @Module({
   imports: [...applicationModules, ...infraStructureModules],
   controllers: [],
