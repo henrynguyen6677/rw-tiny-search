@@ -12,7 +12,7 @@ cp .env.example .env.dev
 ```
 3. Install dependencies
 ```bash
-make install
+make dev-install
 ```
 4. Set up the database for development
 ```bash
