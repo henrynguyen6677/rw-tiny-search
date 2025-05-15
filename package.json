@@ -10,11 +10,11 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "dotenv -e .env.dev nest start --watch",
+    "start:dev": "dotenv -e .env.dev -- nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test": "dotenv -e .env.dev jest",
+    "test": "dotenv -e .env.dev -- jest",
     "test:watch": "jest --watch",
     "test:cov": "dotenv -e .env.dev jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
@@ -24,8 +24,8 @@
     "seed_pois": "node -r ts-node/register prisma/seed/seed.ts --seed-pois",
     "seed_users": "node -r ts-node/register prisma/seed/seed.ts --seed-users",
     "fast_seed_pois": "node -r ts-node/register prisma/seed/seed.ts --fast-seed-pois",
-    "studio": "dotenv -e .env.dev prisma studio",
-    "migrate:dev": "dotenv -e .env.dev prisma migrate dev"
+    "studio": "dotenv -e .env.dev -- prisma studio",
+    "migrate:dev": "dotenv -e .env.dev -- prisma migrate dev"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
