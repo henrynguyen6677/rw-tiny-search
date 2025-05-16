@@ -8,6 +8,7 @@ fast-dev:
 	@echo "Running db container"
 	docker-compose -f dockers/dev/compose.dev.yml up db -d
 	@echo "Start app in host"
+	docker-compose -f dockers/dev/compose.dev.yml down app
 	npm run start:dev
 prisma-generate:
 	@echo "Prisma generate in container"
