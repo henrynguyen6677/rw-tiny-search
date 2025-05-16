@@ -62,8 +62,7 @@ type OverpassResponse = {
   };
 }
 
-async function importPOIsToDatabase(element: Element[] = []) {
-  const prisma = new PrismaClient();
+async function importPOIsToDatabase(prisma: PrismaClient, element: Element[] = []) {
   console.log('Overpass Query:\n', overpassQuery);
   try {
     for (const poi of element) {
@@ -102,8 +101,6 @@ async function importPOIsToDatabase(element: Element[] = []) {
     }
   } catch (error) {
     console.error('Error importing POIs:', error);
-  } finally {
-    await prisma.$disconnect();
   }
 }
 
@@ -122,13 +119,31 @@ async function getOverpassData(query: string): Promise<Element[] | undefined> {
   }
 }
 
+async function isExistedPOIs(prisma: PrismaClient) {
+  const exist = await prisma.store.findFirst();    
+  return !!exist;
+}
+
 export async function importPOIs() {
-  console.log('Start importing POIs from Overpass API...');
-  const pois: Element[] | undefined = await getOverpassData(overpassQuery);
-  if (!pois) {
-    console.error('No POIs found');
-    return;
+  const prisma = new PrismaClient();
+  try {
+    if (await isExistedPOIs(prisma)) {
+      console.warn('Existed POIs');
+      return; 
+    }
+    console.log('Start importing POIs from Overpass API...');
+    const pois: Element[] | undefined = await getOverpassData(overpassQuery);
+    if (!pois) {
+      console.error('No POIs found');
+      return;
+    }
+    await importPOIsToDatabase(prisma, pois);
+    console.log('Done!');
   }
-  await importPOIsToDatabase(pois);
-  console.log('Done!');
+  catch(error) {
+    console.error(error)
+  }
+  finally {
+    await prisma.$disconnect();
+  }
 }

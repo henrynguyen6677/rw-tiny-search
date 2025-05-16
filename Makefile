@@ -9,9 +9,13 @@ fast-dev:
 	docker-compose -f dockers/dev/compose.dev.yml up db -d
 	@echo "Start app in host"
 	npm run start:dev
+prisma-generate:
+	@echo "Prisma generate in container"
+	docker-compose -f dockers/dev/compose.dev.yml up -d
+	docker-compose -f dockers/dev/compose.dev.yml exec app npm run prisma generate
 lazy-seed:
 	@echo "Running db container"
-	docker-compose -f dockers/dev/compose.dev.yml up db -d
+	make prisma-generate
 	npm run seed_pois:dev
 	npm run seed_users:dev
 dev-install:
